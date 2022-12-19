@@ -42,6 +42,8 @@ class Computadora{
 	
 	method hayMemoriaPara(programa) = tamanioMemoria <= programa.memoriaAOcupar()
 	
+	method cuantasVecesFueEjecutado(programa) = programa.vecesQueSeEjecutoEn(self)
+	
 	// PUNTO 3
 	
 	method detenerPrograma(programa){
@@ -69,5 +71,7 @@ class Programa{
 	var property parteDelDisco
 	var property memoriaAOcupar
 	var property maquinasEnLasCualFueEjecutado = []
+	
+	method vecesQueSeEjecutoEn(maquina) = maquinasEnLasCualFueEjecutado.count{ m => m == maquina }
 	
 }
